@@ -7,6 +7,8 @@ const http = require('http');
 const https = require('https');
 const { networkInterfaces } = require('os');
 
+const messages = require('./db/messages');
+
 require('dotenv').config();
 
 const nets = networkInterfaces();
@@ -24,6 +26,22 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
     res.json({
         message: 'Behold The MEVN Stack!'
+    });
+});
+
+app.get('/messages', (req, res) => {
+    messages.getAll().then((messages) => {
+        res.json(messages);
+    });
+});
+
+app.post('/messages', (req, res) => {
+    console.log(req.body);
+    messages.create(req.body).then((message) => {
+        res.json(message);
+    }).catch((error) => {
+        res.status(500);
+        res.json(error);
     });
 });
 

@@ -1,0 +1,27 @@
+{
+  "name": "vue-express-ex",
+  "version": "1.0.0",
+  "description": "Vue & Express example",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hk8522/vue-express-ex.git"
+  },
+  "keywords": [
+    "vuejs",
+    "express"
+  ],
+  "author": "hk8522@outlook.com",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "morgan": "^1.10.0"
+  }
+}
